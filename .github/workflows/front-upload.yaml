@@ -19,10 +19,14 @@ jobs:
           node-version: "18"
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd front
+          npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          cd front 
+          npm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -32,4 +36,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Upload to S3
-        run: aws s3 sync ./build s3://leedonggyu-front-buckets/sqs-benchmark --delete
+        run: |
+          cd front
+          aws s3 sync ./build s3://leedonggyu-front-buckets/sqs-benchmark --delete
