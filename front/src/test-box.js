@@ -1,9 +1,9 @@
 
-export function TestBox() {
+export function TestBox({ value }) {
 
     return (
         <div>
-            <h3>hello world</h3>
+            <h3>hello world {value}</h3>
         </div>
     )
 }

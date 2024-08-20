@@ -24,12 +24,10 @@ function App() {
         />
       </header>
       <div>
-        <TestBox />
-        <TestBox />
-        <TestBox />
-        <TestBox />
-        <TestBox />
-        <TestBox />
+        <TestBox value={inputValue} />
+        <TestBox value={inputValue} />
+        <TestBox value={inputValue} />
+        <TestBox value={inputValue} />
       </div>
     </div>
   );
