@@ -10,23 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      #   - name: Checkout code
+      #     uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
+      #   - name: Set up Node.js
+      #     uses: actions/setup-node@v3
+      #     with:
+      #       node-version: "18"
 
-      - name: Install dependencies
-        run: |
-          cd front
-          npm install
+      #   - name: Install dependencies
+      #     run: |
+      #       cd front
+      #       npm install
 
-      - name: Build project
-        run: |
-          cd front 
-          npm run build
+      #   - name: Build project
+      #     run: |
+      #       cd front
+      #       npm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
