@@ -38,7 +38,7 @@ jobs:
       - name: Upload to S3
         run: |
           cd front
-          aws s3 sync ./build s3://leedonggyu-front-buckets/sqs-benchmark --delete
+          aws s3 sync ./build s3://leedonggyu-front-buckets --delete
 
       - name: Invalidate CloudFront cache
         run: |
