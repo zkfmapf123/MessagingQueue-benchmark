@@ -42,4 +42,4 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation --distribution-id E2T4YM246CDEIR --paths "/sqs-benchmark/index.html"
+          aws cloudfront create-invalidation --distribution-id E2T4YM246CDEIR --paths "/sqs-benchmark/*"
