@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { TestBox } from './test-box';
 
 function App() {
+  const [inputValue, setInputValue] = useState(0);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1> Messaging Queue Benchmark</h1>
+        <h3> CurrentValue : {inputValue}</h3>
+        <label htmlFor="numberInput">Enter a number:</label>
+        <input
+          id="numberInput"
+          type="number"
+          value={inputValue}
+          onChange={handleInputChange}
+        />
       </header>
+      <div>
+        <TestBox />
+        <TestBox />
+        <TestBox />
+        <TestBox />
+        <TestBox />
+        <TestBox />
+      </div>
     </div>
   );
 }
