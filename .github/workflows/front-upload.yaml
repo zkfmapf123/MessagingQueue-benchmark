@@ -39,3 +39,7 @@ jobs:
         run: |
           cd front
           aws s3 sync ./dist s3://leedonggyu-front-buckets/sqs-benchmark --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id E2T4YM246CDEIR --paths "/sqs-benchmark/index.html"
